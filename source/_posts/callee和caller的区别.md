@@ -1,14 +1,10 @@
 ---
-layout: 
+layout:
 title: callee和caller的区别
 date: 2018-03-10 09:26:57
-categories: 
+categories:
   - Javascript
-tags:
-  - 前端
-  - Javascript
-  - Caller
-  - Callee
+tags: ['Javascript','Callee','Caller']
 
 ---
 caller返回一个函数的引用，这个函数调用了当前的函数;callee放回正在执行的函数本身的引用，它是arguments的一个属性
@@ -39,10 +35,8 @@ functionName.caller: functionName是当前正在执行的函数。
       a();   
     }   
     //b();   
-    a(); 
+    a();
     输出结果:null````
-
-
 
 ## callee
 >callee放回正在执行的函数本身的引用，它是arguments的一个属性

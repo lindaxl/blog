@@ -35,7 +35,7 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "Linda,前端"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -98,7 +98,7 @@ menu:
   categories: /categories/ || th
   archives: /archives/ || archive
   photo: /photo/ || picture-o
-  #schedule: /schedule/ || calendar
+  # schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
 
@@ -134,6 +134,7 @@ alipay: /uploads/alipay.png
 social:
   GitHub: https://github.com/lindaxl || github
   E-Mail: mailto:1107144573@gmail.com || envelope
+  weibo: https://weibo.com/u/5646542649/home?topnav=1&wvr=6 || weibo
   # Google: https://plus.google.com/yourname || google
   # Twitter: https://twitter.com/yourname || twitter
   # FB Page: https://www.facebook.com/yourname || facebook
@@ -282,7 +283,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night eighties
 
 
 # ---------------------------------------------------------------
@@ -633,7 +634,7 @@ local_search:
 # External URL with BASE64 encrypt & decrypt.
 # Usage: {% exturl text url "title" %}
 # Alias: {% extlink text url "title" %}
-exturl: false
+exturl: true
 
 # Note tag (bs-callout).
 note:
