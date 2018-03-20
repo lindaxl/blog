@@ -4,7 +4,7 @@ title: callee和caller的区别
 date: 2018-03-10 09:26:57
 categories:
   - Javascript
-tags: ['Javascript','Callee','Caller']
+tags: ['Javascript','Callee和Caller']
 
 ---
 caller返回一个函数的引用，这个函数调用了当前的函数;callee放回正在执行的函数本身的引用，它是arguments的一个属性

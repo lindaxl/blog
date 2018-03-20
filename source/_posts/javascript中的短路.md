@@ -2,7 +2,7 @@
 title: javascript中的短路
 date: 2018-03-13 17:18:15
 categories:
-- 前端
+- Javascript
 tags:
 - Javascript
 - 短路

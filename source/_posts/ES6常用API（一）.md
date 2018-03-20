@@ -2,7 +2,7 @@
 title: ES6常用语法
 date: 2018-03-12 17:59:17
 tags:
-- Javascript
+- ES6
 - ES6常用API
 ---
 
