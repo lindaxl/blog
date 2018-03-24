@@ -1,6 +1,6 @@
 ---
 title: for循环和定时器的问题
-date: 2018-03-12 13:12:56
+date: 2017-04-12 13:12:56
 categories: Javascript
 tags:
 - Javascript

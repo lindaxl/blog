@@ -27,7 +27,6 @@ var foo = {n:1};
 })(foo)
 console.log(foo.n)            //实参foo的指向还是原来的内存空间，里面的值为3.
 ````
-
 ````
 参数是引用参数
 var foo={n:1};

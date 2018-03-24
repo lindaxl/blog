@@ -1,9 +1,9 @@
 ---
 title: js的各种数据遍历的方法总结
-date: 2018-03-20 10:31:37
+date: 2017-03-20 10:31:37
 categories: Javascript
 tags:
-- 遍历
+- js遍历
 ---
 JS数组遍历，基本就是for,forin,foreach,forof,map等等一些方法，以下介绍几种本文分析用到的数组遍历方式以及进行性能分析对比
 ## for循环
@@ -46,7 +46,7 @@ Array.prototype.forEach.call(arr,function(el){
 ````
 简要说明: 由于foreach是Array型自带的，对于一些非这种类型的，无法直接使用(如``NodeList``)，所以才有了这个变种，使用这个变种可以让类似的数组拥有foreach功能。
 实际性能要比普通foreach弱
-## 第六种:forin循环
+## for in循环
 ````
 for(j in arr) {
 
@@ -55,14 +55,14 @@ for(j in arr) {
 简要说明: 这个循环很多人爱用，但实际上，经分析测试，在众多的循环遍历方式中
 
 它的效率是最低的
-## 第七种:map遍历
+## map遍历
 ````
 arr.map(function(n){  
 
 });
 ````
 简要说明: 这种方式也是用的比较广泛的，虽然用起来比较优雅，但实际效率还比不上foreach
-## 第八种:forof遍历(需要ES6支持)
+## for of遍历(需要ES6支持)
 ````
 for(let value of arr) {  
 
@@ -165,8 +165,85 @@ console.log(Object.keys(xyz));
 // (3) ["z", "x", "y"]
 ````
 javascript原生遍历方法的建议用法：
-
 用for循环遍历数组
 用for-in遍历对象
 用for-of遍历类数组对象（ES6）
 用Object.keys()获取对象属性名的集合
+
+>for … of循环和for … in循环有何区别
+for … in循环，它遍历的实际上是对象的属性名称。
+一个Array数组实际上也是一个对象，它的每个元素的索引被视为一个属性。
+当我们手动给Array对象添加了额外的属性后，for … in循环将带来意想不到的意外效果：
+for in 遍历数组时会为把数组索引作为键值　如：数组0、1、2、3、4、5、…的键；当我们这样写：
+````
+var arr=[1,2,3,4,5,6];
+arr.value='val';
+//在使用for in 遍历时
+for(var i in arr){
+    console.log(i+'   '+arr[i]);//这时的i为键值，不为数组索引
+}
+//输出
+0   1
+1   2
+2   3
+3   4
+4   5
+5   6
+value   val
+接着执行，这时出现问题：
+
+arr;//输出[1, 2, 3, 4, 5, 6]
+
+//使用 console.log(arr)时，这样
+console.log(arr);//输出[1, 2, 3, 4, 5, 6, value: "val"]
+
+//alert(arr)时
+alert(arr);//输出[1, 2, 3, 4, 5, 6]
+````
+而当我们使用for of 时：
+````
+var arr=[1,2,3,4,5,6];
+arr.value='val';
+//在使用for in 遍历时
+for(var v of arr){
+    console.log(v);//v为数组的项
+}
+//输出
+1
+2
+3
+4
+5
+6
+直接遍历出值，杜绝使用for in 时，下标索引的影响
+````
+
+>jQuery的$.each
+    jQuery的遍历方法通常被用来遍历DOM元素，用于数组和对象的是$.each()方法，它接受三个参数，分别指代数组索引/元素/数组本身(跟forEach相比,第1个和第2个参数正好是相反的，不要记错了。)：
+/****$.each()遍历对象和数组****/
+````
+$.each(arrTmp,function(index,value,array){
+    console.log(index+": "+value)
+});
+$.each(objTmp,function(key,value){
+    console.log(key+": "+value)
+});
+````
+>map方法
+这里的map不是“地图”的意思，而是指“映射”。[].map(); 基本用法跟forEach方法类似：
+array.map(callback,[ thisObject]);
+callback的参数也类似：
+````
+[].map(function(value, index, array) {
+  // ...
+});
+````
+map方法的作用不难理解，“映射”嘛，也就是原数组被“映射”成对应新数组。下面这个例子是数值项求平方：
+````
+var data=[1,3,4]
+var Squares=data.map(function(val,index,arr){
+  console.log(arr[index]==val);  // ==> true
+  return val*val           
+})
+console.log(Squares);        // ==> [1, 9, 16]
+````

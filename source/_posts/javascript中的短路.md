@@ -1,6 +1,6 @@
 ---
 title: javascript中的短路
-date: 2018-03-13 17:18:15
+date: 2017-03-13 17:18:15
 categories:
 - Javascript
 tags:
