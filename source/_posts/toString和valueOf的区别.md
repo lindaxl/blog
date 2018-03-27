@@ -1,11 +1,11 @@
 ---
-title: Javascript中的toString()和valueOf()的区别
-date: 2018-12-20 08:28:56
+title: Javascript中的toString和valueOf的区别
+date: 2018-2-28 08:28:56
 categories: Javascript
 tags:
 - Javascript
-- toString()
-- valueOf()
+- toString
+- valueOf
 ---
 
 # toString：返回对象的字符串表示形式。
